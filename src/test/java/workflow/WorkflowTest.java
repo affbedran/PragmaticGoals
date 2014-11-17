@@ -1,0 +1,32 @@
+package workflow;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import workflow.datatype.Workflow;
+import workflow.datatype.WorkflowNode;
+
+public class WorkflowTest {
+
+	@Test
+	public void newNodesMustBeCreatedConnected() {
+		WorkflowNode node1 = new WorkflowNode("Node 1");
+
+		Workflow wf = new Workflow(node1);
+
+		int found = 0;
+		for (int i = 0; i < 100; i++) {
+			WorkflowNode node2 = new WorkflowNode("Node 2");
+			wf.addNode(node2);
+
+			for (WorkflowNode node : wf.getNodes()) {
+				if (node.getEdges().contains(node2)) {
+					found = 1;
+				}
+			}
+		}
+
+		assertEquals(1, found);
+	}
+}
