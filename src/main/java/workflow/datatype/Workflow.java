@@ -18,7 +18,7 @@ public class Workflow {
 
 	public void addNode(WorkflowNode node2) {
 		nodes.add(node2);
-		nodes.get(((int) Math.random() * nodes.size())).addEdge(node2);
+		nodes.get(((int) Math.random() * nodes.size() + 1)).addEdge(node2);
 
 	}
 }
