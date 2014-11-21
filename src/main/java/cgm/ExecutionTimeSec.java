@@ -11,7 +11,7 @@ public class ExecutionTimeSec extends Metric{
 	}
 	
 	public int parallelCompose(ExecutionTimeSec t){
-		if(t.getValue() < this.getValue()){
+		if(t.getValue() > this.getValue()){
 			return t.getValue();
 		}
 		else{
@@ -20,7 +20,7 @@ public class ExecutionTimeSec extends Metric{
 	}
 	
 	public int serialCompose(ExecutionTimeSec t){
-		if(t.getValue() < this.getValue()){
+		if(t.getValue() > this.getValue()){
 			return t.getValue();
 		}
 		else{

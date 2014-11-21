@@ -11,7 +11,7 @@ public class ExecutionTimeMin extends Metric{
 	}
 
 	public int serialDecomposition(ExecutionTimeMin t){
-		if(t.getValue() < this.getValue()){
+		if(t.getValue() > this.getValue()){
 			return t.getValue();
 		}
 		else {
@@ -20,7 +20,7 @@ public class ExecutionTimeMin extends Metric{
 	}
 	
 	public int parallelDecomposition(ExecutionTimeMin t){
-		if(t.getValue() < this.getValue()){
+		if(t.getValue() > this.getValue()){
 			return t.getValue();
 		}
 		else {
