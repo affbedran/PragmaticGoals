@@ -15,8 +15,8 @@ public class WorkflowTest {
 
 		Workflow wf = new Workflow(node1);
 
-		int found = 0;
 		for (int i = 0; i < 100; i++) {
+			int found = 0;
 			WorkflowNode node2 = new WorkflowNode("Node 2");
 			wf.addNode(node2);
 
@@ -25,8 +25,7 @@ public class WorkflowTest {
 					found = 1;
 				}
 			}
+			assertEquals(1, found);
 		}
-
-		assertEquals(1, found);
 	}
 }
