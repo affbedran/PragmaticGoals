@@ -12,7 +12,7 @@ public abstract class Refinement {
 	private HashSet<Context> applicableContexts;
 	private HashSet<Context> nonApplicableContexts;
 
-	protected boolean isOrDecomposition = false;
+	
 	protected HashSet<Refinement> dependencies;
 	private String identifier;
 
