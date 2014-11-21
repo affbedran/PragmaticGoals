@@ -16,9 +16,9 @@ public class TaskTest {
 		HashSet<Context> fullContext = new HashSet<Context>();
 		fullContext.add(current);
 
-		task.setProvidedQuality(current, Metric.METERS, 30.0);
+		task.setProvidedQuality(current, Metric.DISTANCE_ERROR, 30.0);
 
-		assertEquals(30.0, task.myProvidedQuality(Metric.METERS, fullContext), 0);
+		assertEquals(30.0, task.myProvidedQuality(Metric.DISTANCE_ERROR, fullContext), 0);
 	}
 
 	@Test
@@ -29,9 +29,9 @@ public class TaskTest {
 		HashSet<Context> fullContext = new HashSet<Context>();
 		fullContext.add(current);
 
-		task.setProvidedQuality(null, Metric.METERS, 30.0);
+		task.setProvidedQuality(null, Metric.DISTANCE_ERROR, 30.0);
 
-		assertEquals(30.0, task.myProvidedQuality(Metric.METERS, fullContext), 0);
+		assertEquals(30.0, task.myProvidedQuality(Metric.DISTANCE_ERROR, fullContext), 0);
 	}
 
 	@Test(expected = MetricNotFoundException.class)
@@ -44,6 +44,6 @@ public class TaskTest {
 
 		task.setProvidedQuality(null, Metric.SECONDS, 30.0);
 
-		assertEquals(30.0, task.myProvidedQuality(Metric.METERS, fullContext), 0);
+		assertEquals(30.0, task.myProvidedQuality(Metric.DISTANCE_ERROR, fullContext), 0);
 	}
 }

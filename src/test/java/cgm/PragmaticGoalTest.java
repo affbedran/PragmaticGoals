@@ -13,8 +13,8 @@ public class PragmaticGoalTest {
 		Context aContext = new Context("c1");
 		Context anotherContext = new Context("c2");
 
-		QualityConstraint aQC = new QualityConstraint(aContext, Metric.METERS, 30, Comparison.LESS_OR_EQUAL_TO);
-		QualityConstraint anotherQC = new QualityConstraint(anotherContext, Metric.METERS, 60,
+		QualityConstraint aQC = new QualityConstraint(aContext, Metric.DISTANCE_ERROR, 30, Comparison.LESS_OR_EQUAL_TO);
+		QualityConstraint anotherQC = new QualityConstraint(anotherContext, Metric.DISTANCE_ERROR, 60,
 				Comparison.LESS_OR_EQUAL_TO);
 
 		Pragmatic goal = new Pragmatic(false);
